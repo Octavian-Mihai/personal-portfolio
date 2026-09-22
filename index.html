@@ -60,9 +60,7 @@
       <div class="wrap section-inner">
         <h2 class="section-title"><span class="section-num">01</span> About</h2>
         <div class="prose">
-          <p>I'm a third-year Software Engineering student at Concordia University who likes building things end-to-end — from reverse-engineering a Bluetooth protocol to get raw sensor data off a fitness band, to shipping the SwiftUI app that turns it into something readable.</p>
-          <p>Most of my work lives on iOS: SwiftUI apps with on-device logic, no accounts or cloud dependency by default, using SwiftData, HealthKit, ARKit, and CoreBluetooth depending on what the project needs. Alongside that I build AI-backed tooling — a bug-diagnosis service that patches and self-tests its own fixes, a fully local retrieval-augmented generation system — and full-stack web apps in React, Next.js, and Supabase/Firebase-backed stacks.</p>
-          <p>I care about projects that work without depending on someone else's server: offline-first, on-device computation, and systems I understand down to the protocol level.</p>
+          <p>Third-year Software Engineering student at Concordia University. I build offline-first iOS apps (SwiftUI, ARKit, reverse-engineered Bluetooth protocols), AI-backed tools, and full-stack web apps — mostly things that work without depending on someone else's server.</p>
         </div>
       </div>
     </section>
@@ -71,31 +69,9 @@
     <section id="projects" class="section section-alt">
       <div class="wrap section-inner">
         <h2 class="section-title"><span class="section-num">02</span> Projects</h2>
-        <p class="section-lede">A selection of iOS, AI-tooling, and full-stack projects. More on <a href="https://github.com/Octavian-Mihai" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+        <p class="section-lede">A selection of iOS, AI-tooling, and full-stack projects.</p>
 
         <div class="project-grid">
-
-          <article class="card">
-            <div class="card-media card-media--phone">
-              <img src="assets/projects/ferrum.jpg" alt="Ferrum dashboard on iPhone showing today's periodized workout and readiness score" width="323" height="700" loading="lazy">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Ferrum</h3>
-              <p class="card-tech">Swift · SwiftUI · SwiftData</p>
-              <p class="card-summary">An offline, rule-based strength-training coach for iOS that generates periodized programs, scores daily readiness, and auto-regulates training load from logged RPE — with no accounts, cloud sync, or LLM involved.</p>
-              <ul class="card-points">
-                <li>Designed a 12-week periodized training engine enforcing muscle-group volume floors scaled by experience level and bodyweight</li>
-                <li>Built a daily readiness engine scoring sleep, energy, and soreness to auto-adjust load or recommend recovery</li>
-                <li>Implemented auto-regulation using Epley 1RM estimation and RPE feedback to recompute weekly loads</li>
-              </ul>
-            </div>
-            <div class="card-footer">
-              <a class="card-link" href="https://github.com/Octavian-Mihai/jugger-not-power" target="_blank" rel="noopener noreferrer">
-                View on GitHub
-                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </a>
-            </div>
-          </article>
 
           <article class="card">
             <div class="card-media card-media--icon">
@@ -144,21 +120,18 @@
           </article>
 
           <article class="card">
-            <div class="card-media card-media--phone">
-              <img src="assets/projects/workout.jpg" alt="Workout app home screen on iPhone showing the current training program" width="322" height="700" loading="lazy">
-            </div>
             <div class="card-body">
-              <h3 class="card-title">Workout</h3>
-              <p class="card-tech">Swift · SwiftUI · SwiftData · HealthKit</p>
-              <p class="card-summary">A native iPhone strength-training app with custom-keypad set logging and RIR tracking, paired with a companion web-based Program Builder that exports/imports programs as schema-validated JSON.</p>
+              <h3 class="card-title">Adaptive Local RAG for Legal Documents</h3>
+              <p class="card-tech">Python · FastAPI · Qdrant · Ollama</p>
+              <p class="card-summary">A fully local (no cloud APIs) retrieval-augmented generation system for legal document Q&amp;A, routing queries across hybrid/graph/SQL retrieval strategies with reranking, citation grounding, and abstention on low-confidence answers.</p>
               <ul class="card-points">
-                <li>Built a custom numeric-keypad workout logger with RIR input and planned-vs-logged tracking</li>
-                <li>Designed a shared JSON Schema contract validated identically on iOS and web to prevent drift</li>
-                <li>Shipped three WidgetKit home-screen widgets and a 3-job CI pipeline on every push</li>
+                <li>Designed a confidence-based query router selecting between hybrid, graph, and SQL retrieval</li>
+                <li>Built a hybrid dense + sparse retrieval pipeline (BGE embeddings + BM25) with reranking on Qdrant</li>
+                <li>Deployed a fully offline inference stack via Docker Compose within an 8GB RAM budget</li>
               </ul>
             </div>
             <div class="card-footer">
-              <a class="card-link" href="https://github.com/Octavian-Mihai/workout-ios" target="_blank" rel="noopener noreferrer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/rag" target="_blank" rel="noopener noreferrer">
                 View on GitHub
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
@@ -185,18 +158,43 @@
           </article>
 
           <article class="card">
+            <div class="card-media card-media--phone">
+              <img src="assets/projects/ferrum.jpg" alt="Ferrum dashboard on iPhone showing today's periodized workout and readiness score" width="323" height="700" loading="lazy">
+            </div>
             <div class="card-body">
-              <h3 class="card-title">Adaptive Local RAG for Legal Documents</h3>
-              <p class="card-tech">Python · FastAPI · Qdrant · Ollama</p>
-              <p class="card-summary">A fully local (no cloud APIs) retrieval-augmented generation system for legal document Q&amp;A, routing queries across hybrid/graph/SQL retrieval strategies with reranking, citation grounding, and abstention on low-confidence answers.</p>
+              <h3 class="card-title">Ferrum</h3>
+              <p class="card-tech">Swift · SwiftUI · SwiftData</p>
+              <p class="card-summary">An offline, rule-based strength-training coach for iOS that generates periodized programs, scores daily readiness, and auto-regulates training load from logged RPE — with no accounts, cloud sync, or LLM involved.</p>
               <ul class="card-points">
-                <li>Designed a confidence-based query router selecting between hybrid, graph, and SQL retrieval</li>
-                <li>Built a hybrid dense + sparse retrieval pipeline (BGE embeddings + BM25) with reranking on Qdrant</li>
-                <li>Deployed a fully offline inference stack via Docker Compose within an 8GB RAM budget</li>
+                <li>Designed a 12-week periodized training engine enforcing muscle-group volume floors scaled by experience level and bodyweight</li>
+                <li>Built a daily readiness engine scoring sleep, energy, and soreness to auto-adjust load or recommend recovery</li>
+                <li>Implemented auto-regulation using Epley 1RM estimation and RPE feedback to recompute weekly loads</li>
               </ul>
             </div>
             <div class="card-footer">
-              <a class="card-link" href="https://github.com/Octavian-Mihai/rag" target="_blank" rel="noopener noreferrer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/jugger-not-power" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media card-media--phone">
+              <img src="assets/projects/workout.jpg" alt="Workout app home screen on iPhone showing the current training program" width="322" height="700" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Workout</h3>
+              <p class="card-tech">Swift · SwiftUI · SwiftData · HealthKit</p>
+              <p class="card-summary">A native iPhone strength-training app with custom-keypad set logging and RIR tracking, paired with a companion web-based Program Builder that exports/imports programs as schema-validated JSON.</p>
+              <ul class="card-points">
+                <li>Built a custom numeric-keypad workout logger with RIR input and planned-vs-logged tracking</li>
+                <li>Designed a shared JSON Schema contract validated identically on iOS and web to prevent drift</li>
+                <li>Shipped three WidgetKit home-screen widgets and a 3-job CI pipeline on every push</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/workout-ios" target="_blank" rel="noopener noreferrer">
                 View on GitHub
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
@@ -247,6 +245,13 @@
             </div>
           </article>
 
+        </div>
+
+        <div class="projects-more">
+          <a href="https://github.com/Octavian-Mihai" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            And more
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
         </div>
       </div>
     </section>

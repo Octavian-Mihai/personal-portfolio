@@ -669,6 +669,12 @@ html[data-theme="dark"] .icon-moon { display: block; }
   transform: translate(2px, -2px);
 }
 
+.projects-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
 /* ---------------------------------------------
    Skills
 --------------------------------------------- */
