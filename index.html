@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Octavian Mihai — Software Engineer</title>
+  <meta name="description" content="Octavian Mihai — Software Engineering student at Concordia University. iOS apps, AI-backed tools, and full-stack web projects.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#hero" class="logo">OM</a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <ul class="nav-list" id="navList">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="icon icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+        <svg class="icon icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="wrap hero-inner">
+        <p class="hero-eyebrow">Hi, I'm</p>
+        <h1 class="hero-name">Octavian Mihai</h1>
+        <p class="hero-tagline">Software engineering student building offline-first apps, reverse-engineered protocols, and AI-backed tools.</p>
+        <p class="hero-role">3rd-year Software Engineering student at Concordia University</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="wrap section-inner">
+        <h2 class="section-title"><span class="section-num">01</span> About</h2>
+        <div class="prose">
+          <p>I'm a third-year Software Engineering student at Concordia University who likes building things end-to-end — from reverse-engineering a Bluetooth protocol to get raw sensor data off a fitness band, to shipping the SwiftUI app that turns it into something readable.</p>
+          <p>Most of my work lives on iOS: SwiftUI apps with on-device logic, no accounts or cloud dependency by default, using SwiftData, HealthKit, ARKit, and CoreBluetooth depending on what the project needs. Alongside that I build AI-backed tooling — a bug-diagnosis service that patches and self-tests its own fixes, a fully local retrieval-augmented generation system — and full-stack web apps in React, Next.js, and Supabase/Firebase-backed stacks.</p>
+          <p>I care about projects that work without depending on someone else's server: offline-first, on-device computation, and systems I understand down to the protocol level.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section section-alt">
+      <div class="wrap section-inner">
+        <h2 class="section-title"><span class="section-num">02</span> Projects</h2>
+        <p class="section-lede">A selection of iOS, AI-tooling, and full-stack projects. More on <a href="https://github.com/Octavian-Mihai" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+
+        <div class="project-grid">
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">Ferrum</h3>
+              <p class="card-tech">Swift · SwiftUI · SwiftData</p>
+              <p class="card-summary">An offline, rule-based strength-training coach for iOS that generates periodized programs, scores daily readiness, and auto-regulates training load from logged RPE — with no accounts, cloud sync, or LLM involved.</p>
+              <ul class="card-points">
+                <li>Designed a 12-week periodized training engine enforcing muscle-group volume floors scaled by experience level and bodyweight</li>
+                <li>Built a daily readiness engine scoring sleep, energy, and soreness to auto-adjust load or recommend recovery</li>
+                <li>Implemented auto-regulation using Epley 1RM estimation and RPE feedback to recompute weekly loads</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/jugger-not-power" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">OpenWhoop</h3>
+              <p class="card-tech">Swift · SwiftUI · CoreBluetooth</p>
+              <p class="card-summary">A native iOS companion app for the WHOOP 4.0 fitness band that reverse-engineers its Bluetooth protocol to compute recovery, strain, sleep, and HRV metrics locally — without WHOOP's own cloud service or account.</p>
+              <ul class="card-points">
+                <li>Reverse-engineered the WHOOP 4.0 Bluetooth protocol to stream biometric data without an account</li>
+                <li>Built on-device computation of HRV, sleep stages, and strain/recovery, replacing the cloud pipeline</li>
+                <li>Designed clock-correlation and backfill logic to reconcile device timestamps</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/open-nhoop-ios" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">Ursa Sky</h3>
+              <p class="card-tech">Swift · SwiftUI · ARKit · SceneKit</p>
+              <p class="card-summary">An offline AR planetarium for iPhone that overlays a bundled star and constellation catalog on the live camera feed, with core sky-pointing and search working with zero network access.</p>
+              <ul class="card-points">
+                <li>Built a real-time AR sky overlay using ARKit and SceneKit with CoreMotion sensor fusion</li>
+                <li>Implemented astronomical positioning (Julian date, precession, nutation) for accurate star placement</li>
+                <li>Built an SGP4 orbital propagator to predict ISS visibility passes from parsed TLE data</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/ursa-sky" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">Workout</h3>
+              <p class="card-tech">Swift · SwiftUI · SwiftData · HealthKit</p>
+              <p class="card-summary">A native iPhone strength-training app with custom-keypad set logging and RIR tracking, paired with a companion web-based Program Builder that exports/imports programs as schema-validated JSON.</p>
+              <ul class="card-points">
+                <li>Built a custom numeric-keypad workout logger with RIR input and planned-vs-logged tracking</li>
+                <li>Designed a shared JSON Schema contract validated identically on iOS and web to prevent drift</li>
+                <li>Shipped three WidgetKit home-screen widgets and a 3-job CI pipeline on every push</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/workout-ios" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">AI Bug Investigation Assistant</h3>
+              <p class="card-tech">Python · FastAPI · Claude API · Docker</p>
+              <p class="card-summary">A FastAPI service that autonomously diagnoses application errors in a GitHub repo, generates a patch and regression test via Claude, and self-validates the fix inside a disposable sandboxed clone before returning it.</p>
+              <ul class="card-points">
+                <li>Integrated Claude to diagnose errors and generate unified-diff patches with auto-written regression tests</li>
+                <li>Built a sandboxed validation pipeline running each test against unpatched and patched code</li>
+                <li>Implemented resource-guarded subprocess execution to safely run untrusted repository code</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/ai-bug-analyzer" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">Adaptive Local RAG for Legal Documents</h3>
+              <p class="card-tech">Python · FastAPI · Qdrant · Ollama</p>
+              <p class="card-summary">A fully local (no cloud APIs) retrieval-augmented generation system for legal document Q&amp;A, routing queries across hybrid/graph/SQL retrieval strategies with reranking, citation grounding, and abstention on low-confidence answers.</p>
+              <ul class="card-points">
+                <li>Designed a confidence-based query router selecting between hybrid, graph, and SQL retrieval</li>
+                <li>Built a hybrid dense + sparse retrieval pipeline (BGE embeddings + BM25) with reranking on Qdrant</li>
+                <li>Deployed a fully offline inference stack via Docker Compose within an 8GB RAM budget</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/rag" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">Live Sports Tracker</h3>
+              <p class="card-tech">Next.js · TypeScript · PostgreSQL · Prisma</p>
+              <p class="card-summary">A full-stack dashboard for following favorite sports teams — live scores, schedules, standings, and player stats — built on Next.js with a Postgres/Prisma backend and a provider-agnostic sports-data integration layer.</p>
+              <ul class="card-points">
+                <li>Designed a normalized Prisma schema persisting teams/leagues only when a user saves them</li>
+                <li>Implemented tiered fetch caching, cutting redundant calls to the upstream sports API</li>
+                <li>Built real-time score polling with SWR and client-side diffing for in-app notifications</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/live_sport_tracking" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">MealMajor <span class="card-tag">team project</span></h3>
+              <p class="card-tech">JavaScript · Firebase · OpenAI API</p>
+              <p class="card-summary">A meal-prep planner built for students: recipe collection, weekly scheduling, and an AI assistant for meal ideas from whatever's in the fridge. Built with a 5-person team for SOEN 341 at Concordia.</p>
+              <ul class="card-points">
+                <li>Built the weekly meal-planning UI end-to-end, including week navigation and configurable week-start day</li>
+                <li>Built the profile management page wired to Firebase Authentication and the Realtime Database</li>
+                <li>Collaborated via GitHub PRs, with Playwright E2E and Jest unit tests enforced in CI on every push</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/Meal-Planner" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="wrap section-inner">
+        <h2 class="section-title"><span class="section-num">03</span> Skills</h2>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3 class="skill-group-title">Languages</h3>
+            <ul class="skill-tags">
+              <li>Swift</li><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>C#</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-title">iOS &amp; Apple Frameworks</h3>
+            <ul class="skill-tags">
+              <li>SwiftUI</li><li>SwiftData</li><li>ARKit</li><li>SceneKit</li><li>CoreBluetooth</li><li>CoreMotion</li><li>HealthKit</li><li>WidgetKit</li><li>Swift Charts</li><li>XCTest</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-title">Web &amp; Frontend</h3>
+            <ul class="skill-tags">
+              <li>React</li><li>Next.js</li><li>Vite</li><li>TailwindCSS</li><li>Zustand</li><li>TanStack Query</li><li>shadcn/ui</li><li>Framer Motion</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-title">Backend &amp; Data</h3>
+            <ul class="skill-tags">
+              <li>FastAPI</li><li>Node.js</li><li>PostgreSQL</li><li>Prisma</li><li>Supabase</li><li>Firebase</li><li>SQLite</li><li>Docker</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-title">AI / ML</h3>
+            <ul class="skill-tags">
+              <li>Claude API</li><li>OpenAI API</li><li>Qdrant</li><li>Ollama</li><li>RAG pipelines</li><li>Embeddings &amp; reranking</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-title">Tools &amp; Testing</h3>
+            <ul class="skill-tags">
+              <li>Git</li><li>GitHub Actions</li><li>Jest</li><li>Playwright</li><li>Vitest</li><li>pytest</li><li>ESLint</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+      <div class="wrap section-inner">
+        <h2 class="section-title"><span class="section-num">04</span> Contact</h2>
+        <p class="section-lede">Open to internships, collaborations, and interesting problems. Reach out on any of these.</p>
+
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:octavian.mihai321@gmail.com">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"></path><path d="M22 6l-10 7L2 6"></path><path d="M2 6h20v12H2z"></path></svg>
+            <span>octavian.mihai321@gmail.com</span>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/octavian-mihai321" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="contact-link" href="https://github.com/Octavian-Mihai" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span id="year"></span> Octavian Mihai. Built with HTML, CSS &amp; JavaScript.</p>
+      <a href="#hero" class="back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
