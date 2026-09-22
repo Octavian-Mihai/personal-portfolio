@@ -26,7 +26,7 @@
   --radius-sm: 8px;
 
   --max-w: 70ch;
-  --wrap-w: 1100px;
+  --wrap-w: 1240px;
 
   --transition: 200ms ease;
 }
@@ -483,15 +483,11 @@ html[data-theme="dark"] .icon-moon { display: block; }
 .project-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-@media (min-width: 640px) {
-  .project-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1024px) {
-  .project-grid { grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 720px) {
+  .project-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.75rem; }
 }
 
 .card {
@@ -502,6 +498,70 @@ html[data-theme="dark"] .icon-moon { display: block; }
   border-radius: var(--radius);
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+/* ---- Project screenshots / icons ---- */
+.card-media {
+  position: relative;
+  width: 100%;
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-media img {
+  display: block;
+}
+
+/* Landscape web screenshots: full-bleed, cropped to a wide box */
+.card-media--wide {
+  aspect-ratio: 16 / 9;
+}
+
+.card-media--wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Portrait iPhone screenshots: shown whole, centered on a neutral field */
+.card-media--phone {
+  aspect-ratio: 16 / 11;
+  padding-block: 1.25rem;
+}
+
+.card-media--phone img {
+  height: 100%;
+  width: auto;
+  max-width: 60%;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+}
+
+/* No screenshot available yet: app icon badge instead */
+.card-media--icon {
+  aspect-ratio: 16 / 11;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--accent-soft);
+}
+
+.card-media--icon img {
+  width: 84px;
+  height: 84px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-media-note {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
 }
 
 .card:hover {
