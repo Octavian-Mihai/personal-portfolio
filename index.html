@@ -74,6 +74,28 @@
         <div class="project-grid">
 
           <article class="card">
+            <div class="card-media card-media--wide">
+              <img src="assets/projects/ai-bug-analyzer.jpg" alt="Terminal showing an AI Bug Investigation Assistant request diagnosing and patching a pagination bug" width="1000" height="735" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">AI Bug Investigation Assistant</h3>
+              <p class="card-tech">Python · FastAPI · Claude API · Docker</p>
+              <p class="card-summary">A FastAPI service that autonomously diagnoses application errors in a GitHub repo, generates a patch and regression test via Claude, and self-validates the fix inside a disposable sandboxed clone before returning it.</p>
+              <ul class="card-points">
+                <li>Integrated Claude to diagnose errors and generate unified-diff patches with auto-written regression tests</li>
+                <li>Built a sandboxed validation pipeline running each test against unpatched and patched code</li>
+                <li>Implemented resource-guarded subprocess execution to safely run untrusted repository code</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/ai-bug-analyzer" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
             <div class="card-media card-media--phone">
               <img src="assets/projects/openwhoop-today.svg" alt="OpenWhoop Today tab showing recovery ring, strain, sleep, HRV, and steps" width="390" height="844" loading="lazy">
             </div>
@@ -89,6 +111,28 @@
             </div>
             <div class="card-footer">
               <a class="card-link" href="https://github.com/Octavian-Mihai/open-nhoop-ios" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media card-media--wide">
+              <img src="assets/projects/rag.jpg" alt="Adaptive Local RAG app showing a legal question, ingest panel, and query metrics" width="1000" height="703" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Adaptive Local RAG for Legal Documents</h3>
+              <p class="card-tech">Python · FastAPI · Qdrant · Ollama</p>
+              <p class="card-summary">A fully local (no cloud APIs) retrieval-augmented generation system for legal document Q&amp;A, routing queries across hybrid/graph/SQL retrieval strategies with reranking, citation grounding, and abstention on low-confidence answers.</p>
+              <ul class="card-points">
+                <li>Designed a confidence-based query router selecting between hybrid, graph, and SQL retrieval</li>
+                <li>Built a hybrid dense + sparse retrieval pipeline (BGE embeddings + BM25) with reranking on Qdrant</li>
+                <li>Deployed a fully offline inference stack via Docker Compose within an 8GB RAM budget</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/rag" target="_blank" rel="noopener noreferrer">
                 View on GitHub
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
@@ -119,42 +163,20 @@
 
           <article class="card">
             <div class="card-media card-media--wide">
-              <img src="assets/projects/rag.jpg" alt="Adaptive Local RAG app showing a legal question, ingest panel, and query metrics" width="1000" height="703" loading="lazy">
+              <img src="assets/projects/live-sports-tracker.jpg" alt="Live Sports Tracker dashboard showing saved teams, upcoming games, and recent results" width="1000" height="541" loading="lazy">
             </div>
             <div class="card-body">
-              <h3 class="card-title">Adaptive Local RAG for Legal Documents</h3>
-              <p class="card-tech">Python · FastAPI · Qdrant · Ollama</p>
-              <p class="card-summary">A fully local (no cloud APIs) retrieval-augmented generation system for legal document Q&amp;A, routing queries across hybrid/graph/SQL retrieval strategies with reranking, citation grounding, and abstention on low-confidence answers.</p>
+              <h3 class="card-title">Live Sports Tracker</h3>
+              <p class="card-tech">Next.js · TypeScript · PostgreSQL · Prisma</p>
+              <p class="card-summary">A full-stack dashboard for following favorite sports teams — live scores, schedules, standings, and player stats — built on Next.js with a Postgres/Prisma backend and a provider-agnostic sports-data integration layer.</p>
               <ul class="card-points">
-                <li>Designed a confidence-based query router selecting between hybrid, graph, and SQL retrieval</li>
-                <li>Built a hybrid dense + sparse retrieval pipeline (BGE embeddings + BM25) with reranking on Qdrant</li>
-                <li>Deployed a fully offline inference stack via Docker Compose within an 8GB RAM budget</li>
+                <li>Designed a normalized Prisma schema persisting teams/leagues only when a user saves them</li>
+                <li>Implemented tiered fetch caching, cutting redundant calls to the upstream sports API</li>
+                <li>Built real-time score polling with SWR and client-side diffing for in-app notifications</li>
               </ul>
             </div>
             <div class="card-footer">
-              <a class="card-link" href="https://github.com/Octavian-Mihai/rag" target="_blank" rel="noopener noreferrer">
-                View on GitHub
-                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-media card-media--wide">
-              <img src="assets/projects/ai-bug-analyzer.jpg" alt="Terminal showing an AI Bug Investigation Assistant request diagnosing and patching a pagination bug" width="1000" height="735" loading="lazy">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">AI Bug Investigation Assistant</h3>
-              <p class="card-tech">Python · FastAPI · Claude API · Docker</p>
-              <p class="card-summary">A FastAPI service that autonomously diagnoses application errors in a GitHub repo, generates a patch and regression test via Claude, and self-validates the fix inside a disposable sandboxed clone before returning it.</p>
-              <ul class="card-points">
-                <li>Integrated Claude to diagnose errors and generate unified-diff patches with auto-written regression tests</li>
-                <li>Built a sandboxed validation pipeline running each test against unpatched and patched code</li>
-                <li>Implemented resource-guarded subprocess execution to safely run untrusted repository code</li>
-              </ul>
-            </div>
-            <div class="card-footer">
-              <a class="card-link" href="https://github.com/Octavian-Mihai/ai-bug-analyzer" target="_blank" rel="noopener noreferrer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/live_sport_tracking" target="_blank" rel="noopener noreferrer">
                 View on GitHub
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
@@ -199,28 +221,6 @@
             </div>
             <div class="card-footer">
               <a class="card-link" href="https://github.com/Octavian-Mihai/workout-ios" target="_blank" rel="noopener noreferrer">
-                View on GitHub
-                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-media card-media--wide">
-              <img src="assets/projects/live-sports-tracker.jpg" alt="Live Sports Tracker dashboard showing saved teams, upcoming games, and recent results" width="1000" height="541" loading="lazy">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Live Sports Tracker</h3>
-              <p class="card-tech">Next.js · TypeScript · PostgreSQL · Prisma</p>
-              <p class="card-summary">A full-stack dashboard for following favorite sports teams — live scores, schedules, standings, and player stats — built on Next.js with a Postgres/Prisma backend and a provider-agnostic sports-data integration layer.</p>
-              <ul class="card-points">
-                <li>Designed a normalized Prisma schema persisting teams/leagues only when a user saves them</li>
-                <li>Implemented tiered fetch caching, cutting redundant calls to the upstream sports API</li>
-                <li>Built real-time score polling with SWR and client-side diffing for in-app notifications</li>
-              </ul>
-            </div>
-            <div class="card-footer">
-              <a class="card-link" href="https://github.com/Octavian-Mihai/live_sport_tracking" target="_blank" rel="noopener noreferrer">
                 View on GitHub
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
