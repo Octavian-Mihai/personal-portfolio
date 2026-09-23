@@ -543,27 +543,6 @@ html[data-theme="dark"] .icon-moon { display: block; }
   box-shadow: var(--shadow-md);
 }
 
-/* No screenshot available yet: app icon badge instead */
-.card-media--icon {
-  aspect-ratio: 16 / 11;
-  flex-direction: column;
-  gap: 0.6rem;
-  background: var(--accent-soft);
-}
-
-.card-media--icon img {
-  width: 84px;
-  height: 84px;
-  border-radius: 20px;
-  box-shadow: var(--shadow-sm);
-}
-
-.card-media-note {
-  font-size: 0.78rem;
-  color: var(--text-faint);
-  font-family: var(--font-mono);
-}
-
 .card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
