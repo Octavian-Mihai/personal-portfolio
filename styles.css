@@ -580,6 +580,25 @@ html[data-theme="dark"] .icon-moon { display: block; }
   letter-spacing: 0.03em;
 }
 
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.card-tags li {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  padding: 0.2em 0.6em;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
 .card-tech {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -622,6 +641,9 @@ html[data-theme="dark"] .icon-moon { display: block; }
 .card-footer {
   padding: 1rem 1.5rem 1.5rem;
   margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
 }
 
 .card-link {

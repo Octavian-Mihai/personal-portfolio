@@ -69,9 +69,69 @@
     <section id="projects" class="section section-alt">
       <div class="wrap section-inner">
         <h2 class="section-title"><span class="section-num">02</span> Projects</h2>
-        <p class="section-lede">A selection of iOS, AI-tooling, and full-stack projects.</p>
+        <p class="section-lede">A selection of backend, security, iOS, AI-tooling, and full-stack projects.</p>
 
         <div class="project-grid">
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">Distributed URL Shortener</h3>
+              <p class="card-tech">Go · PostgreSQL · Redis · Kafka</p>
+              <ul class="card-tags" aria-label="Project tags"><li>Backend</li><li>Distributed systems</li></ul>
+              <p class="card-summary">A read-optimized, horizontally scalable URL shortener built to demonstrate distributed-systems design: cache-aside reads, range-allocated IDs, and an asynchronous, idempotent analytics pipeline over Kafka or SQS.</p>
+              <ul class="card-points">
+                <li>Designed a redirect path with Redis cache-aside, negative caching, and singleflight coalescing — 50 concurrent cache misses collapse into 1 DB read</li>
+                <li>Implemented collision-free short codes using Postgres range-allocated ID blocks, a keyed Feistel permutation, and base62 encoding</li>
+                <li>Built an idempotent click-analytics pipeline over Kafka, with Prometheus/Grafana, k6 load tests, Kubernetes, and Terraform for AWS</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/shorter-url" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">websec-scanner</h3>
+              <p class="card-tech">Python · SARIF · GitHub Actions</p>
+              <ul class="card-tags" aria-label="Project tags"><li>Security</li><li>DevOps</li></ul>
+              <p class="card-summary">A passive web security scanner built for CI that checks headers, cookies, TLS, CORS, content, and exposed paths, maps every finding to CWE and OWASP Top 10, and uploads SARIF results to GitHub’s Security tab as a reusable GitHub Action.</p>
+              <ul class="card-points">
+                <li>Built 33 rules, each mapped to a CWE and OWASP Top 10 (2021) category, with configurable severity gating that fails builds</li>
+                <li>Implemented scope enforcement, request throttling, robots.txt handling, and expiring risk-acceptance config</li>
+                <li>Enforced quality with mypy --strict, a 90% coverage gate, CodeQL, bandit, and end-to-end CI against OWASP Juice Shop</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/web-security-scanner" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">gitsecrets</h3>
+              <p class="card-tech">Python · Git · pre-commit</p>
+              <ul class="card-tags" aria-label="Project tags"><li>Security</li><li>CLI</li></ul>
+              <p class="card-summary">A zero-dependency secret scanner that finds credentials across an entire git history using regex rules and entropy detection, usable as a CLI, pre-commit hook, or GitHub Action.</p>
+              <ul class="card-points">
+                <li>Combined regex rules with Shannon-entropy detection to surface secrets deleted from code but still in history</li>
+                <li>Added baselines using sha256 fingerprints so existing repos only fail on new findings, plus JSON/SARIF output</li>
+                <li>Parallelized history scanning, cutting a 236-commit repo scan from about 21 s to 0.9 s; 100% precision and recall on a labelled corpus</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/git-secret-scanner" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
 
           <article class="card">
             <div class="card-media card-media--wide">
@@ -80,6 +140,7 @@
             <div class="card-body">
               <h3 class="card-title">AI Bug Investigation Assistant</h3>
               <p class="card-tech">Python · FastAPI · Claude API · Docker</p>
+              <ul class="card-tags" aria-label="Project tags"><li>AI</li><li>Backend</li></ul>
               <p class="card-summary">A FastAPI service that autonomously diagnoses application errors in a GitHub repo, generates a patch and regression test via Claude, and self-validates the fix inside a disposable sandboxed clone before returning it.</p>
               <ul class="card-points">
                 <li>Integrated Claude to diagnose errors and generate unified-diff patches with auto-written regression tests</li>
@@ -102,6 +163,7 @@
             <div class="card-body">
               <h3 class="card-title">OpenWhoop</h3>
               <p class="card-tech">Swift · SwiftUI · CoreBluetooth</p>
+              <ul class="card-tags" aria-label="Project tags"><li>iOS</li><li>Reverse engineering</li></ul>
               <p class="card-summary">A native iOS companion app for the WHOOP 4.0 fitness band that reverse-engineers its Bluetooth protocol to compute recovery, strain, sleep, and HRV metrics locally — without WHOOP's own cloud service or account.</p>
               <ul class="card-points">
                 <li>Reverse-engineered the WHOOP 4.0 Bluetooth protocol to stream biometric data without an account</li>
@@ -124,6 +186,7 @@
             <div class="card-body">
               <h3 class="card-title">Adaptive Local RAG for Legal Documents</h3>
               <p class="card-tech">Python · FastAPI · Qdrant · Ollama</p>
+              <ul class="card-tags" aria-label="Project tags"><li>AI</li><li>Backend</li></ul>
               <p class="card-summary">A fully local (no cloud APIs) retrieval-augmented generation system for legal document Q&amp;A, routing queries across hybrid/graph/SQL retrieval strategies with reranking, citation grounding, and abstention on low-confidence answers.</p>
               <ul class="card-points">
                 <li>Designed a confidence-based query router selecting between hybrid, graph, and SQL retrieval</li>
@@ -146,6 +209,7 @@
             <div class="card-body">
               <h3 class="card-title">Ursa Sky</h3>
               <p class="card-tech">Swift · SwiftUI · ARKit · SceneKit</p>
+              <ul class="card-tags" aria-label="Project tags"><li>iOS</li><li>AR</li></ul>
               <p class="card-summary">An offline AR planetarium for iPhone that overlays a bundled star and constellation catalog on the live camera feed, with core sky-pointing and search working with zero network access.</p>
               <ul class="card-points">
                 <li>Built a real-time AR sky overlay using ARKit and SceneKit with CoreMotion sensor fusion</li>
@@ -168,6 +232,7 @@
             <div class="card-body">
               <h3 class="card-title">Live Sports Tracker</h3>
               <p class="card-tech">Next.js · TypeScript · PostgreSQL · Prisma</p>
+              <ul class="card-tags" aria-label="Project tags"><li>Full-stack</li><li>Web</li></ul>
               <p class="card-summary">A full-stack dashboard for following favorite sports teams — live scores, schedules, standings, and player stats — built on Next.js with a Postgres/Prisma backend and a provider-agnostic sports-data integration layer.</p>
               <ul class="card-points">
                 <li>Designed a normalized Prisma schema persisting teams/leagues only when a user saves them</li>
@@ -190,6 +255,7 @@
             <div class="card-body">
               <h3 class="card-title">UFC Fight Predictor</h3>
               <p class="card-tech">Python · scikit-learn · Streamlit</p>
+              <ul class="card-tags" aria-label="Project tags"><li>Machine learning</li><li>Data</li></ul>
               <p class="card-summary">A fully local UFC fight predictor that trains a calibrated win-probability model on official UFC Stats career data and ranks value underdogs against live moneylines in a Streamlit dashboard — no cloud GPU, no paid hosting.</p>
               <ul class="card-points">
                 <li>Built leak-free red−blue differential features (striking, takedowns, control time, form, reach) from prior-bout career averages only</li>
@@ -205,23 +271,28 @@
             </div>
           </article>
 
-          <article class="card">
+<article class="card">
             <div class="card-media card-media--phone">
-              <img src="assets/projects/workout.jpg" alt="Workout app home screen on iPhone showing the current training program" width="322" height="700" loading="lazy">
+              <img src="assets/projects/workout.jpg" alt="Vigor app home screen on iPhone showing the current training program" width="322" height="700" loading="lazy">
             </div>
             <div class="card-body">
-              <h3 class="card-title">Workout</h3>
-              <p class="card-tech">Swift · SwiftUI · SwiftData · HealthKit</p>
-              <p class="card-summary">A native iPhone strength-training app with custom-keypad set logging and RIR tracking, paired with a companion web-based Program Builder that exports/imports programs as schema-validated JSON.</p>
+              <h3 class="card-title">Vigor</h3>
+              <p class="card-tech">Swift · SwiftUI · HealthKit · WidgetKit</p>
+              <ul class="card-tags" aria-label="Project tags"><li>iOS</li><li>Full-stack</li></ul>
+              <p class="card-summary">A native iPhone strength-training app with custom-keypad set logging, RIR tracking, and rotating multi-day programs, paired with an Apple Watch app, a web Program Builder, and a browser-based Coach Portal for analyzing a client’s exported data.</p>
               <ul class="card-points">
-                <li>Built a custom numeric-keypad workout logger with RIR input and planned-vs-logged tracking</li>
-                <li>Designed a shared JSON Schema contract validated identically on iOS and web to prevent drift</li>
-                <li>Shipped three WidgetKit home-screen widgets and a 3-job CI pipeline on every push</li>
+                <li>Built a custom numeric-keypad logger with RIR input, rest timer, plate calculator, and planned-vs-logged set tracking</li>
+                <li>Developed a stress and per-muscle freshness model with volume and tonnage analytics, shared with a client-side Coach Portal (10 pages, no data uploaded)</li>
+                <li>Integrated HealthKit, an Apple Watch companion, and Live Activity/StandBy widgets, with unit tests and CI on every push</li>
               </ul>
             </div>
             <div class="card-footer">
-              <a class="card-link" href="https://github.com/Octavian-Mihai/workout-ios" target="_blank" rel="noopener noreferrer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/vigor-workout" target="_blank" rel="noopener noreferrer">
                 View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+              <a class="card-link" href="https://program-builder-mu.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Live Program Builder
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
             </div>
@@ -232,8 +303,9 @@
               <img src="assets/projects/mealmajor.jpg" alt="MealMajor home page linking to recipes, weekly schedule, and the AI fridge assistant" width="1000" height="625" loading="lazy">
             </div>
             <div class="card-body">
-              <h3 class="card-title">MealMajor <span class="card-tag">team project</span></h3>
+              <h3 class="card-title">MealMajor</h3>
               <p class="card-tech">JavaScript · Firebase · OpenAI API</p>
+              <ul class="card-tags" aria-label="Project tags"><li>Web</li><li>Team project</li></ul>
               <p class="card-summary">A meal-prep planner built for students: recipe collection, weekly scheduling, and an AI assistant for meal ideas from whatever's in the fridge. Built with a 5-person team for SOEN 341 at Concordia.</p>
               <ul class="card-points">
                 <li>Built the weekly meal-planning UI end-to-end, including week navigation and configurable week-start day</li>
