@@ -4,6 +4,10 @@ A single-page portfolio site built with plain HTML, CSS, and JavaScript — no f
 
 **Live site:** https://octavian-mihai.github.io/personal-portfolio/
 
+## Screenshots
+
+![Portfolio home page](docs/screenshots/pp.png)
+
 ## Architecture
 
 ```mermaid
