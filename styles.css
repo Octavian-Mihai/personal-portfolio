@@ -528,6 +528,16 @@ html[data-theme="dark"] .icon-moon { display: block; }
   object-position: top;
 }
 
+/* Terminal demos: show the whole frame instead of cropping */
+.card-media--fit {
+  background: #0d1117;
+}
+
+.card-media--fit img {
+  object-fit: contain;
+  object-position: center;
+}
+
 /* Portrait iPhone screenshots: shown whole, centered on a neutral field */
 .card-media--phone {
   aspect-ratio: 16 / 11;
