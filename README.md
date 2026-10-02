@@ -1,5 +1,7 @@
 # Octavian Mihai — Portfolio
 
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for an architecture diagram.
+
 A single-page portfolio site built with plain HTML, CSS, and JavaScript — no frameworks, no build step.
 
 **Live site:** https://octavian-mihai.github.io/personal-portfolio/
