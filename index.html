@@ -69,11 +69,20 @@
     <section id="projects" class="section section-alt">
       <div class="wrap section-inner">
         <h2 class="section-title"><span class="section-num">02</span> Projects</h2>
-        <p class="section-lede">A selection of backend, security, iOS, AI-tooling, and full-stack projects.</p>
+        <p class="section-lede">Pick a focus area to see the projects most relevant to it.</p>
 
-        <div class="project-grid">
+        <div class="profile-tabs" role="tablist" aria-label="Project profile">
+          <button type="button" class="profile-tab" role="tab" id="tab-all" data-profile="all" aria-selected="true" aria-controls="projectGrid">All</button>
+          <button type="button" class="profile-tab" role="tab" id="tab-ai" data-profile="ai" aria-selected="false" aria-controls="projectGrid" tabindex="-1">AI / ML</button>
+          <button type="button" class="profile-tab" role="tab" id="tab-backend" data-profile="backend" aria-selected="false" aria-controls="projectGrid" tabindex="-1">Backend</button>
+          <button type="button" class="profile-tab" role="tab" id="tab-fullstack" data-profile="fullstack" aria-selected="false" aria-controls="projectGrid" tabindex="-1">Full-stack</button>
+          <button type="button" class="profile-tab" role="tab" id="tab-ios" data-profile="ios" aria-selected="false" aria-controls="projectGrid" tabindex="-1">iOS</button>
+          <button type="button" class="profile-tab" role="tab" id="tab-security" data-profile="security" aria-selected="false" aria-controls="projectGrid" tabindex="-1">Security</button>
+        </div>
 
-          <article class="card">
+        <div class="project-grid" id="projectGrid" role="tabpanel">
+
+          <article class="card" data-profiles="backend fullstack security">
                         <div class="card-media card-media--wide">
               <img src="assets/projects/url-shortener.jpg" alt="Swagger UI for the URL Shortener API listing the create-link, stats, redirect, and health endpoints" width="1000" height="750" loading="lazy">
             </div>
@@ -96,7 +105,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-profiles="security">
                         <div class="card-media card-media--wide">
               <img src="assets/projects/websec-scanner.jpg" alt="GitHub Security tab listing websec-scanner findings with severity labels" width="1000" height="557" loading="lazy">
             </div>
@@ -119,7 +128,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-profiles="backend security">
                         <div class="card-media card-media--wide card-media--fit">
               <img src="assets/projects/gitsecrets.svg" alt="Terminal demo of gitsecrets blocking a commit that contains an AWS access key" width="1086" height="480" loading="lazy">
             </div>
@@ -142,7 +151,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-profiles="ai security">
             <div class="card-media card-media--wide">
               <img src="assets/projects/ai-bug-analyzer.jpg" alt="Terminal showing an AI Bug Investigation Assistant request diagnosing and patching a pagination bug" width="1000" height="735" loading="lazy">
             </div>
@@ -165,7 +174,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-profiles="ios">
             <div class="card-media card-media--phone">
               <img src="assets/projects/openwhoop-today.svg" alt="OpenWhoop Today tab showing recovery ring, strain, sleep, HRV, and steps" width="390" height="844" loading="lazy">
             </div>
@@ -188,7 +197,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-profiles="ai">
             <div class="card-media card-media--wide">
               <img src="assets/projects/rag.jpg" alt="Adaptive Local RAG app showing a legal question, ingest panel, and query metrics" width="1000" height="703" loading="lazy">
             </div>
@@ -211,7 +220,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-profiles="ios">
             <div class="card-media card-media--phone">
               <img src="assets/projects/ursa-sky.jpg" alt="Ursa Sky AR view pointing out Polaris and the Ursa Minor constellation" width="321" height="700" loading="lazy">
             </div>
@@ -234,7 +243,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-profiles="fullstack">
             <div class="card-media card-media--wide">
               <img src="assets/projects/live-sports-tracker.jpg" alt="Live Sports Tracker dashboard showing saved teams, upcoming games, and recent results" width="1000" height="541" loading="lazy">
             </div>
@@ -257,7 +266,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-profiles="ai">
             <div class="card-media card-media--wide">
               <img src="assets/projects/ufc-predictor.jpg" alt="UFC Fight Predictor Streamlit dashboard showing model win probability, market odds, and EV for an upcoming card" width="1000" height="694" loading="lazy">
             </div>
@@ -280,7 +289,7 @@
             </div>
           </article>
 
-<article class="card">
+<article class="card" data-profiles="ios fullstack">
             <div class="card-media card-media--phone">
               <img src="assets/projects/vigor.jpg" alt="Vigor app home screen on iPhone showing the yearly activity grid, daily stress, and a start-workout button" width="461" height="1000" loading="lazy">
             </div>
@@ -307,7 +316,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-profiles="fullstack">
             <div class="card-media card-media--wide">
               <img src="assets/projects/mealmajor.jpg" alt="MealMajor home page linking to recipes, weekly schedule, and the AI fridge assistant" width="1000" height="625" loading="lazy">
             </div>
@@ -324,6 +333,87 @@
             </div>
             <div class="card-footer">
               <a class="card-link" href="https://github.com/Octavian-Mihai/Meal-Planner" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card" data-profiles="backend">
+            <div class="card-body">
+              <h3 class="card-title">Durable Job Queue</h3>
+              <p class="card-tech">Java · Spring Boot · PostgreSQL · Docker</p>
+              <ul class="card-tags" aria-label="Project tags"><li>Backend</li><li>Distributed systems</li></ul>
+              <p class="card-summary">A Postgres-only job queue where workers claim batches without double-processing, and a stalled worker can never overwrite the result of the one that replaced it.</p>
+              <ul class="card-points">
+                <li>Workers claim batches with SELECT … FOR UPDATE SKIP LOCKED, so no job is ever claimed by two workers</li>
+                <li>Implemented leases, heartbeats, and a leaderless reaper, with fenced completion writes against zombie workers</li>
+                <li>Added retries with exponential backoff and full jitter, idempotency keys, and a dead-letter queue with inspect and replay</li>
+                <li>Verified under failure with 42 k6 load-test runs (422,405 jobs, including SIGKILLed workers) and no accepted job lost</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/job-queue" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card" data-profiles="backend">
+            <div class="card-body">
+              <h3 class="card-title">Internbot</h3>
+              <p class="card-tech">Python · Telegram Bot API · GitHub Actions · SQLite</p>
+              <ul class="card-tags" aria-label="Project tags"><li>Backend</li><li>Automation</li></ul>
+              <p class="card-summary">A job-alert Telegram bot that aggregates official job-board APIs into normalized postings and runs entirely on a GitHub Actions cron.</p>
+              <ul class="card-points">
+                <li>Aggregated the Adzuna, Greenhouse, and Lever APIs, skipping failing sources rather than failing the run</li>
+                <li>Implemented title filters and SQLite deduplication by job ID and by company and title, so each posting is sent once</li>
+                <li>Persisted state on an orphan git branch instead of an external database</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/tg_bot" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card" data-profiles="ai">
+            <div class="card-body">
+              <h3 class="card-title">Vector Database Visualizer</h3>
+              <p class="card-tech">TypeScript · React · Vite</p>
+              <ul class="card-tags" aria-label="Project tags"><li>AI</li><li>Web</li></ul>
+              <p class="card-summary">A fully client-side vector database demo: text is embedded, stored, and searched in the browser with no backend or API keys.</p>
+              <ul class="card-points">
+                <li>Built a deterministic hash-based text-to-vector engine producing 384-dimensional embeddings client-side</li>
+                <li>Implemented cosine-similarity semantic search across an in-browser vector store</li>
+                <li>Designed import/export of the entire vector database as portable JSON</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/Vector-Database-Visualization" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card" data-profiles="ios">
+            <div class="card-body">
+              <h3 class="card-title">Altus</h3>
+              <p class="card-tech">Swift · SwiftUI · SwiftData · watchOS · CoreMotion</p>
+              <ul class="card-tags" aria-label="Project tags"><li>iOS</li><li>Sensors</li></ul>
+              <p class="card-summary">An iPhone and Apple Watch velocity-based-training app that measures jump height and bar speed from raw accelerometer data.</p>
+              <ul class="card-points">
+                <li>Implemented a flight-time jump-height detector (h = g·t²/8) using a state machine over raw accelerometer data</li>
+                <li>Built a velocity pipeline with world-vertical projection, double integration with zero-velocity updates, rep segmentation, and RIR estimation</li>
+                <li>Streamed live metrics from Watch to iPhone via WatchConnectivity, throttled to ~12 Hz with guaranteed delivery of final results</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="card-link" href="https://github.com/Octavian-Mihai/altus-velocity" target="_blank" rel="noopener noreferrer">
                 View on GitHub
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>

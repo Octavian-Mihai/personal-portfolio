@@ -326,6 +326,7 @@ button:focus-visible {
   .nav-list {
     position: static;
     inset: auto;
+    height: auto;
     background: none;
     flex-direction: row;
     gap: 2rem;
@@ -489,6 +490,38 @@ html[data-theme="dark"] .icon-moon { display: block; }
 @media (min-width: 720px) {
   .project-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.75rem; }
 }
+
+.profile-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.profile-tab {
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.profile-tab:hover { border-color: var(--accent); color: var(--accent); }
+
+.profile-tab[aria-selected="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.profile-tab:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+.card[hidden] { display: none; }
 
 .card {
   display: flex;

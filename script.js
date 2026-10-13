@@ -86,6 +86,38 @@
     });
   }
 
+  /* ---------- Project profile tabs ---------- */
+  var profileTabs = Array.prototype.slice.call(document.querySelectorAll('.profile-tab'));
+  var projectCards = document.querySelectorAll('#projectGrid .card');
+
+  function selectProfile(tab, focus) {
+    var profile = tab.getAttribute('data-profile');
+    profileTabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+    });
+    projectCards.forEach(function (card) {
+      var profiles = (card.getAttribute('data-profiles') || '').split(' ');
+      var show = profile === 'all' || profiles.indexOf(profile) !== -1;
+      card.hidden = !show;
+      if (show) card.classList.add('is-visible');
+    });
+    if (focus) tab.focus();
+  }
+
+  profileTabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () { selectProfile(tab, false); });
+    tab.addEventListener('keydown', function (e) {
+      var next = null;
+      if (e.key === 'ArrowRight') next = profileTabs[(i + 1) % profileTabs.length];
+      else if (e.key === 'ArrowLeft') next = profileTabs[(i - 1 + profileTabs.length) % profileTabs.length];
+      else if (e.key === 'Home') next = profileTabs[0];
+      else if (e.key === 'End') next = profileTabs[profileTabs.length - 1];
+      if (next) { e.preventDefault(); selectProfile(next, true); }
+    });
+  });
+
   /* ---------- Scroll-reveal animations ---------- */
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
