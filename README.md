@@ -42,12 +42,24 @@ Vanilla HTML5, CSS3 (custom properties, `color-mix`, Grid/Flexbox), and vanilla 
 
 ## Project structure
 
-```
-.
-├── index.html    # Markup and content
-├── styles.css    # Theming, layout, animations
-└── script.js     # Nav toggle, dark mode, scroll reveals
-```
+| Path | Purpose |
+|---|---|
+| `index.html` | Markup and content: Hero, About, Projects, Skills, Contact |
+| `styles.css` | Theming with custom properties, layout, dark mode, animations |
+| `script.js` | Nav toggle, theme toggle (persisted), scroll reveal |
+| `assets/` | Images and static files |
+| `docs/` | `ARCHITECTURE.md` and screenshots |
+
+## Design patterns
+
+- **Design tokens as CSS custom properties.** Light values live in `:root` and dark values in overrides, so restyling means
+  changing a variable such as `--accent`.
+- **Progressive enhancement.** The page is complete semantic HTML; JavaScript only adds the nav toggle, theme toggle and reveals.
+- **System preference first, user override second.** Theme follows `prefers-color-scheme` until the visitor picks one, which is
+  stored in `localStorage` and applied through a `data-theme` attribute.
+- **Accessibility as a default.** `prefers-reduced-motion` disables animation, and contrast, ARIA labels and keyboard navigation
+  are part of the base design.
+- **No dependencies, no build.** Plain files that any static host can serve.
 
 ## Customization
 
